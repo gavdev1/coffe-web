@@ -1,0 +1,103 @@
+@use "../utilities/functions" as *;
+@use "../mixin" as *;
+
+.steps {
+  color: getColor("white");
+  text-align: center;
+  padding: 3em 2em;
+  position: relative;
+  
+  &__image {
+    @include position(absolute, 20em, null, null, 0);
+    position: absolute;
+    left: 0;
+    top: 20em;
+    width: 100%;
+    height: 80%;
+    z-index: -10;
+    opacity: .2;
+  }
+}
+
+.step {
+  width: 50%;
+  margin-top: 2em;
+  text-align: left;
+  position: relative;
+  @include breakpoints("sm") {
+    text-align: left;
+    margin-top: 10em;
+  }
+  
+  &-cotainer {
+    position: relative;
+    @include breakpoints("sm") {
+      @include flex(flex, null, null, 1.5em, center);
+    }
+  }
+
+  
+  &__image {
+    width: 150px;
+    height: 150px;
+    background-color: getColor("primary-light");
+    padding: 2em;
+    border-radius: 50%;
+    margin: 1em 0;
+    @include flex(flex, null, null, null, center, center);
+    @include breakpoints("sm") {
+      margin: 3em auto;
+      width: 200px;
+      height: 200px;
+    }
+  }
+  
+  &--right {
+    margin-left: auto;
+    text-align: right;
+    @include breakpoints("sm") {
+      @include flex(flex, column);
+    }
+  }
+  
+  &__image--right {
+    order: 1;
+  }
+  
+  &__circle {
+    background-color: getColor("secondary");
+    padding: 1em;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    color: getColor("primary");
+    outline: 10px solid getColor("primary");
+    @include resize(2em);
+    @include flex(flex, null, null, null, center, center);
+    @include position(absolute, 0, null, null, -1em);
+    @include breakpoints("sm") {
+      top: 1em;
+      left: .2em
+    }
+    
+    &--right{
+      @include breakpoints("sm") {
+        top: 3em;
+      }
+    }
+  }
+  
+  &__line {
+    @include position(absolute, 8em, null, null, 13em);
+    z-index: -10;
+    @include breakpoints("sm") {
+      transform: rotate(90deg);
+      width: 250px;
+      @include position(absolute, 0, null, null, 25em);
+    }
+    
+    @include breakpoints-max("2sm"){
+      display: none;
+    }
+  }
+}

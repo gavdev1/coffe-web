@@ -1,0 +1,24 @@
+@use "../utilities/functions" as *;
+@use "../mixin" as *;
+
+.home {
+  text-align: center;
+  @include breakpoints("sm"){
+    text-align: left;
+    @include grid(1fr, 2, 1.5em, null, center);
+  }
+  
+  &__texts {
+    color: getColor("white");
+    
+    &-subtitle {
+      color: getColor("secondary");
+      text-transform: uppercase;
+    }
+    
+    &-image {
+      width: 60px;
+      @include position(absolute, 0, -1.3em, -.2em);
+    }
+  }
+}

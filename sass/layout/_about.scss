@@ -1,0 +1,25 @@
+@use "../utilities/functions" as *;
+@use "../mixin" as *;
+
+.about {
+  text-align: center;
+  @include breakpoints("sm") {
+    @include grid(1fr, 2, 1.5em, null, center);
+    text-align: left;
+  }
+  
+  &-container {
+    background-color: getColor("white");
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    padding-block: 2em 3em;
+  }
+  
+  &__image {
+  border-radius: 10px;
+  }
+  
+  &__texts {
+    color: var(--text-color);
+  }
+}

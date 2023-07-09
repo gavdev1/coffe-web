@@ -1,0 +1,43 @@
+@use "../utilities/functions" as *;
+@use "../utilities/variables" as *;
+@use "../mixin" as *;
+
+.products {
+  background-color: getColor("primary-light");
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
+  margin-top: 2em;
+}
+
+.product {
+  text-align: center;
+  @include breakpoints("sm") {
+    text-align: left;
+    @include grid(1fr, 2, 1.5em, null, center);
+  }
+
+  &__text {
+    color: getColor("white");
+  }
+
+  &__coffee {
+    @include flex(flex, null, wrap, 2em, space-between, center);
+    margin-top: 2em;
+    text-align: center;
+    color: getColor("white");
+    font-weight: isBold("bold");
+
+    &-item {
+      flex: 0 0 40%;
+      @include breakpoints("sm"){
+        flex: 1;
+      }
+      
+    }
+
+    &-title {
+      @include resize(1.4em);
+      font-family: $second-font;
+    }
+  }
+}

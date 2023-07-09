@@ -1,0 +1,28 @@
+//Colores
+$palette: (
+  "primary": hsl(12, 32%, 22%),
+  "primary-alt": hsl(12, 42%, 12%),
+  "primary-light": hsl(12, 24%, 32%),
+  "secondary": hsl(39, 62%, 65%),
+  "title-color": hsl(12, 12%, 16%),
+  "text-color": hsl(12, 12%, 32%),
+  "dark": #000,
+  "white": #fff
+);
+
+//Font
+$font-primary: "Poppins", sans-serif;
+$second-font: "Pacifico", cursive;
+
+$weight: 400, 500, 600;
+
+//breakpoints media query
+$breakpoints: (
+  "2sm": 350px,
+  "sm": 768px,
+  "md": 1000px,
+  "lg": 1440px,
+  "xl": 2000px
+);
+
+$z-fixed: 10;

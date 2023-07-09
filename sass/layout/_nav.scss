@@ -1,0 +1,73 @@
+@use "../mixin" as *;
+@use "../utilities/variables" as *;
+@use "../utilities/functions" as *;
+
+.header {
+  width: 100%;
+  padding-block: 1em;
+  border-bottom: 3px dashed getColor("primary-alt");
+  font-family: $second-font;
+  z-index: $z-fixed;
+  @include position(fixed, 0, null, null, 0);
+  @include transiciones(1s, background-color);
+  
+  
+}
+
+.nav {
+  width: 90%;
+  @include flex(flex, null, null, null, center, center);
+  @include breakpoints("sm") {
+    @include flex(flex, null, null, null, space-between, center);
+  }
+
+  &__logo {
+    @include flex(flex, null, null, 1em, null, center);
+    color: getColor("white");
+
+    &-image {
+      width: 50px;
+    }
+  }
+
+  &__menu {
+    @include position(fixed, null, null, 0, 0);
+    background-color: getColor("primary-alt");
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    padding: 2em;
+    width: 100%;
+    @include flex(flex, null, null, 2em, center, null);
+
+    @include breakpoints("sm") {
+      position: static;
+      background-color: transparent;
+      border-radius: none;
+      padding: 0;
+      gap: 2em;
+      width: unset; 
+    }
+
+
+    &-element {
+      @include flex(flex, column, null, null, center, center);
+      color: getColor("white");
+
+      @include breakpoints("sm") {
+        @include flex(flex, row);
+      }
+    }
+
+    &-icon {
+      font-size: 2em;
+      @include breakpoints("sm") {
+        display: none;
+      }
+    }
+  }
+}
+
+.bg-visible{
+  background-color: getColor("primary-light");
+  border: none;
+}

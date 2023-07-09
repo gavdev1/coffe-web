@@ -1,0 +1,10 @@
+{
+  "name": "coffee-website",
+  "version": "1.0.0",
+  "description": "Web de una marca de café responsiva compatible con todos los dispositivos moviles, se usaron las tecnologías HTML & SASS & JS.",
+  "scripts": {
+    "sass": "sass -w sass/style.scss src/build/style.css"
+  },
+  "author": "Gabriel Acero",
+  "license": "ISC"
+}

@@ -1,0 +1,95 @@
+@use "../utilities/variables" as *;
+@use "../utilities/functions" as *;
+@use "../mixin" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: getColor("text-color");
+  background-color: getColor("primary");
+  font-family: $font-primary;
+  font-size: 1em;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: getColor("dark");
+}
+
+img {
+  max-width: 100%;
+}
+
+p {
+  line-height: 1.5;
+}
+
+main {
+  margin-top: 5em;
+}
+
+section {
+  padding-block: 4.5rem 3.5rem;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  @include container(1100px, 0, 1em);
+}
+
+.title--white {
+  @include title("white");
+}
+
+.title--dark {
+  @include title("title-color");
+}
+
+.title--small{
+  @include title(null, 1.4em, 2em);
+  @include breakpoints("sm") {
+    margin-block: 0;
+  }
+}
+
+.btn-primary {
+  @include button(inline-flex, 1em, 2em, "white", "secondary", null,null, 50px);
+  box-shadow: getColor("secondary") 0px 3px 8px;
+  align-items: center;
+}
+
+.btn-secondary {
+  @include button(inline-flex, 1em, 2em, "white", "primary-alt", null, null, 50px);
+  align-items: center;
+  box-shadow: getColor("primary-alt") 0px 3px 8px;
+}
+
+.image {
+  width: 300px;
+  margin: 1em auto;
+
+  @include breakpoints("sm") {
+    width: 100%;
+  }
+}
+
+.text {
+  width: 75%;
+  margin: 1em auto;
+
+  @include breakpoints("sm") {
+    width: 100%;
+  }
+}
